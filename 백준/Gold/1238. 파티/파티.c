@@ -21,7 +21,7 @@ int max()
 	int ma = 0, temp=0;
 	for (int i = 1; i <= n; i++)
 	{
-		temp = graph[i][x] + graph[x][i];
+		temp = graph[i][x] + graph[x][i];// 가는 거리 + 오는 거리의 최댓값 
 		if (temp > ma)
 			ma = temp;
 	}
