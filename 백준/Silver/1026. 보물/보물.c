@@ -19,12 +19,6 @@ int main()
                 arr1[j]=arr1[j+1];
                 arr1[j+1]=temp;
             }  
-        }
-    } 
-    for(int i=0; i<n; i++)
-    {
-        for(int j=0; j<n-1; j++)
-        {
             if(arr2[j]<arr2[j+1])
             {
                 temp=arr2[j];
@@ -32,7 +26,7 @@ int main()
                 arr2[j+1]=temp;
             }  
         }
-    }
+    } 
     temp=0;
     for(int i=0; i<n; i++)
         temp+=arr1[i]*arr2[i];
