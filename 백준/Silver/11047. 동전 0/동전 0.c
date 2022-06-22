@@ -12,21 +12,21 @@ int main()
     {
         while(1)
         {
-             if(k-coin[i]>=0)   
+             if(k-coin[i]>=0)//k가 동전 금액보다 클때   
              {
-                 k-=coin[i];
+                 k-=coin[i];//가장 금액이 큰 동전부터 뺌
                  cnt++;
-                 if(k==0)
+                 if(k==0)//0원이면 종료
                  {
                      ch=1;  
                      break;
                  }
              }
-            else
+            else//k가 0보다 작으면 작은 동전으로 다시
                 break;
             
         }
-        if(ch==1)
+        if(ch==1)//0원이면 종료
             break;
         i--;
     }
