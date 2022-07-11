@@ -6,14 +6,14 @@ bool ans[300001] = { false };
 stack<int> s;
 int main()
 {
-    int temp,c=0,cnt=0;
+    int temp,c=0, t=1, cnt=0;
     scanf("%d", &n);
     for (int j = 0; j < n; j++)
     {
         scanf("%d", &temp);
         if (s.empty())
         {
-            for (int i = 1; i <= temp; i++)
+            for (int i = t; i <= temp; i++)
             {
                 if (!vi[i])
                 {
@@ -23,6 +23,7 @@ int main()
                     cnt++;
                 }
             }
+            t = s.top();
             s.pop();
             ans[cnt] = false;
             cnt++;
@@ -50,6 +51,7 @@ int main()
                     cnt++;
                 }
             }
+            t = s.top();
             s.pop();
             ans[cnt] = false;
             cnt++;
