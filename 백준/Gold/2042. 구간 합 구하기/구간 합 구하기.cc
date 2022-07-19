@@ -39,6 +39,9 @@ void Update_SegmentTree(int Node, int Start, int End, int Index, long long Diff)
 
 int main()
 {
+    std::ios_base::sync_with_stdio(false);
+std::cin.tie(nullptr);
+std::cout.tie(nullptr);
 	int n, m, k;
 	int a, b;
 	long long c, temp;
