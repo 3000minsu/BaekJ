@@ -3,14 +3,16 @@ using namespace std;
 int tree[1000001];
 int main()
 {
-	int n, m, mid, l, r;
+	int n, m, mid, l, r=-1;
 	long long cnt=0, ans=-1;
 	scanf("%d %d", &n, &m);
 	for (int i = 0; i < n; i++)
+	{
 		scanf("%d", &tree[i]);
-	sort(tree, tree + n);
+		if (tree[i] > r)
+			r = tree[i];
+	}
 	l = 0;
-	r = tree[n-1];
 	mid = (r+l) / 2;
 
 	while (r >= l)
