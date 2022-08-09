@@ -17,18 +17,17 @@ int dij(int st, int ed)
 	}
 	dis[st] = 0;
 	pq.push({ 0, st });
-	//temp = pq.top();
+	temp = pq.top();
 	while (!pq.empty())
 	{
 		temp = pq.top();
 		pq.pop();
-		/*if (dis[temp.second] < temp.first)
+		if (dis[temp.second] < temp.first)
 			continue;
 		if (temp.second == ed)
 		{
-			ch = 1;
 			break;
-		}*/
+		}
 		for (int i = 1; i <= n; i++)
 		{
 			if (dis[temp.second] + graph[temp.second][i] < dis[i])
@@ -38,10 +37,9 @@ int dij(int st, int ed)
 			}
 		}
 	} 
-	//if (ch == 1)
-		return dis[ed];
-	//else
-		//return -1;
+	
+	return dis[ed];
+	
 }
 int main()
 {
