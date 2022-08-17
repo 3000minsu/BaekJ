@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 char a[22][22];
-int r, c, ans=-1;
+int r, c, ans=-1, ch=0;
 bool vi[22][22] = { false };
 bool a_vi[26] = { false };
 int dx[4] = { 0, 1,0, -1 };	
@@ -13,7 +13,12 @@ void dfs(int y, int x, int cnt)
 	a_vi[a[y][x] - 'A'] = true;
 	if (cnt > ans)
 		ans = cnt;
-
+    if(ans>=26)
+    {
+        ch=1;
+        return;
+    }
+    
 	for (int i = 0; i < 4; i++)
 	{
 		ty = y + dy[i];
@@ -26,6 +31,8 @@ void dfs(int y, int x, int cnt)
 				vi[ty][tx] = false;
 				a_vi[a[ty][tx] - 'A'] = false;
 			}
+            if(ch)
+                return;
 		}
 	}
 }
