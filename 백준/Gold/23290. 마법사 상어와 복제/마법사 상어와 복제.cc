@@ -55,7 +55,7 @@ void fish_move()
 					}
 					else
 					{
-						for (int a = k + 8; a >= k + 1; a--)
+						for (int a = k + 8; a >= k + 1; a--)//반시계방향으로
 						{
 							if (a % 9 == 0)
 								continue;
@@ -100,7 +100,7 @@ void shark_dfs(int c, int x, int y, int idx, int feed)
 		{
 			tidx = idx + (int)((int)pow(10, c) * i);
 			temp = now_fish[tx][ty][0];
-			now_fish[tx][ty][0] = 0;
+			now_fish[tx][ty][0] = 0;//상어가 지나간곳 물고기 수 0로
 			shark_dfs(c + 1, tx, ty, tidx, feed + temp);
 			now_fish[tx][ty][0]=temp;
 		}
@@ -166,24 +166,8 @@ int main()
 	{
 		fish_move();
 		if (cnt > 1)
-			reset_smell();
-		for (int i = 1; i < 5; i++)
-		{
-			for (int j = 1; j < 5; j++)
-			{
-				ans += now_fish[i][j][0];
-			}
-		}
-		ans = 0;
+			reset_smell();//냄새 초기화를 먼저 해줌(shark move에서 냄새가 업데이트 되니까)
 		shark_move();
-		for (int i = 1; i < 5; i++)
-		{
-			for (int j = 1; j < 5; j++)
-			{
-				ans += now_fish[i][j][0];
-			}
-		}
-		ans = 0;
 		copy_fish();
 	}
 	for (int i = 1; i < 5; i++)
